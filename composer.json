@@ -1,0 +1,16 @@
+{
+  "name": "setbased/abc-request-handler",
+  "description": "ABC Framework: Request Handler",
+  "keywords": [
+    "framework",
+    "request",
+    "handler"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "SetBased\\Abc\\RequestHandler\\": "src/"
+    }
+  }
+}
