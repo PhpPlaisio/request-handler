@@ -1,10 +1,10 @@
 {
   "name": "setbased/abc-request-handler",
-  "description": "ABC Framework: Request Handler",
+  "description": "ABC-Framework: Request Handler",
   "keywords": [
-    "framework",
-    "request",
-    "handler"
+    "ABC-Framework",
+    "Request",
+    "Handler"
   ],
   "type": "library",
   "license": "MIT",
