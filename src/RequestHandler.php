@@ -1,5 +1,5 @@
 <?php
-//----------------------------------------------------------------------------------------------------------------------
+
 namespace SetBased\Abc\RequestHandler;
 
 /**
@@ -11,7 +11,7 @@ interface RequestHandler
   /**
    * Handles a page request.
    */
-  public function handleRequest();
+  public function handleRequest(): void;
 
   //--------------------------------------------------------------------------------------------------------------------
 }
