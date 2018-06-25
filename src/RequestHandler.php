@@ -16,7 +16,7 @@ interface RequestHandler
    * @api
    * @since 3.0.0
    */
-  public function getPagId(): int;
+  public function getPagId(): ?int;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
