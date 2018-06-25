@@ -11,7 +11,7 @@ interface RequestHandler
   /**
    * Returns the ID of the page currently requested.
    *
-   * @return int
+   * @return int|null
    *
    * @api
    * @since 3.0.0
