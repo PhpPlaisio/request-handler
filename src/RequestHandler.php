@@ -1,9 +1,10 @@
 <?php
+declare(strict_types=1);
 
-namespace SetBased\Abc\RequestHandler;
+namespace Plaisio\RequestHandler;
 
 /**
- * Interface for classes for handling page requests.
+ * Interface for handling HTTP requests.
  */
 interface RequestHandler
 {

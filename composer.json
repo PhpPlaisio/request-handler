@@ -1,19 +1,18 @@
 {
-  "name": "setbased/abc-request-handler",
-  "description": "ABC-Framework: Request Handler",
+  "name": "plaisio/request-handler",
+  "description": "PhpPlaisio: Request Handler",
   "keywords": [
-    "ABC-Framework",
+    "PhpPlaisio",
     "Request",
     "Handler"
   ],
-  "type": "library",
   "license": "MIT",
   "require": {
     "php": ">=7.1.0"
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Abc\\RequestHandler\\": "src/"
+      "Plaisio\\RequestHandler\\": "src/"
     }
   }
 }
