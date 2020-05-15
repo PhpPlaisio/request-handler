@@ -1,0 +1,9 @@
+<kernel>
+    <properties>
+        <property>
+            <type>\Plaisio\RequestHandler\RequestHandler</type>
+            <name>requestHandler</name>
+            <description>The helper object for handling the HTTP page request.</description>
+        </property>
+    </properties>
+</kernel>
