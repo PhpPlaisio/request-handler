@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Plaisio\RequestHandler;
 
+use Plaisio\Response\Response;
+
 /**
  * Interface for handling HTTP requests.
  */
@@ -10,24 +12,36 @@ interface RequestHandler
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Adds a listener that must be notified when an event occurs.
+   * This event will be triggered after a page requested has been successfully handled and the response object has
+   * been created.
+   */
+  const EVENT_END_RESPONSE = 4;
+
+  /**
+   * This event will be triggered after the database transaction has been commit. The observer CAN NOT access the
+   * database or session data.
+   */
+  const EVENT_END_FINALIZE = 5;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Adds an observer that must be notified when an event occurs.
    *
    * The following events must be implemented be a concrete class:
    * <ul>
-   * <li> post_render: This event occurs after a page requested has been successfully handled.
-   * <li> post_commit: This event occurs after a page requested has been handled and the database transaction has been
-   *                   committed. The listener CAN NOT access the database or session data.
+   * <li> EVENT_END_RESPONSE
+   * <li> EVENT_END_FINALIZE
    * </ul>
    *
-   * @param string   $event    The name of the event.
-   * @param callable $listener The listener that must be notified when the event occurs.
+   * @param int      $event    The ID of the event.
+   * @param callable $observer The observer that must be notified when the event occurs.
    *
    * @return void
    *
    * @api
    * @since 1.0.0
    */
-  public function addListener(string $event, callable $listener): void;
+  public function addListener(int $event, callable $observer): void;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -42,12 +56,14 @@ interface RequestHandler
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Handles a page request.
+   * Handles a page request and returns the response that has been sent to the user agent.
+   *
+   * @return Response
    *
    * @api
    * @since 1.0.0
    */
-  public function handleRequest(): void;
+  public function handleRequest(): Response;
 
   //--------------------------------------------------------------------------------------------------------------------
 }
